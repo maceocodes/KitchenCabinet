@@ -1,4 +1,10 @@
-<h1>{{ recipe.name }} Details</h1>
-<div><span>id: </span>{{ recipe.id }}</div>
-<div><span>name: </span>{{ recipe.name }}</div>
+<div>
+  <h1>{{ recipe.name }} Recipe </h1>
+  <div><span>id: </span>{{ recipe.id }}</div>
+  <div>
+    <label>Recipe Name:
+      <input [(ngModel)]="recipe.name" placeholder="name"/>
+  </label>
+  </div>
+</div>
 
