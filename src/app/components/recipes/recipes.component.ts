@@ -15,6 +15,11 @@ export class RecipesComponent implements OnInit {
   };
 
   recipes = RECIPES;
+
+  selectedRecipe: Recipe;
+  onSelect(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
+  }
   
   constructor() { }
 
