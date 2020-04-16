@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'; //note Input for @input on line 10
 import { Recipe } from '../../recipes';
 
 @Component({
@@ -7,8 +7,8 @@ import { Recipe } from '../../recipes';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  @Input() recipe: Recipe;
-  
+  @Input() recipe: Recipe; //receives and displays recipe object via the recipe property. Makes recipes property abailable for binding by external components
+
   constructor() { }
 
   ngOnInit(): void {
