@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../../recipes';
+import { Recipe } from '../../recipe';
+import { RECIPES } from '../../mock-recipes';
 
 @Component({
   selector: 'app-recipes',
@@ -7,15 +8,21 @@ import { Recipe } from '../../recipes';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipe: Recipe = {
+  selectedRecipe: Recipe = {
     id: 1,
-    name: 'hotwings'
+    recipeName: 'hotwings',
+    cuisine: 'american',
   };
 
+  recipes = RECIPES;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectedHero: Recipe;
+  onSelect(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
+  }
 }
