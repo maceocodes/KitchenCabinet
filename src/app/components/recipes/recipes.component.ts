@@ -16,13 +16,15 @@ export class RecipesComponent implements OnInit {
 
   recipes = RECIPES;
 
+  onSelect(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  selectedHero: Recipe;
-  onSelect(recipe: Recipe): void {
-    this.selectedRecipe = recipe;
-  }
 }
+
+
