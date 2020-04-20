@@ -1,6 +1,6 @@
-import { Recipe } from './recipes'; //same folder as mock-recipes only requires a single(.)
+import { Recipe } from './recipe';
 
 export const RECIPES: Recipe[] = [
-  { id: 2, recipeName: 'Baked Spaghetti', cuisine: 'Italian' },
-  { id: 3, recipeName: 'Chicken Stir Fry', cuisine: 'Asian' }
-];
+    { id: 2, recipeName: 'Baked Spaghetti', cuisine: 'italian' },
+    { id: 3, recipeName: 'Fish Tacos', cuisine: 'mexican' }
+]

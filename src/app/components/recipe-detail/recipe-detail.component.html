@@ -1,13 +1,10 @@
 <div *ngIf="recipe">
-  
-  <h2>{{recipe.recipeName | uppercase}} Details</h2>
-  <div><span>ID: </span>{{recipe.id}}</div>
-  <div>
-    <label>Recipe:
-      <input [(ngModel)]="recipe.recipeName" placeholder="Pizza"/>
-    </label>
-    <label>Cuisine:
-      <input [(ngModel)]="recipe.cuisine" placeholder="Italian"/>
-    </label>
+
+    <h2>{{recipe.recipeName | uppercase}} Details</h2>
+      <div><span>id: </span>{{recipe.id}}</div>
+      <div>
+        <label>recipe:
+          <input [(ngModel)]="recipe.recipeName" placeholder="recipe"/>
+        </label>
+    </div>
   </div>
-</div>

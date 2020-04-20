@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../../recipes';
-import { RecipeService } from '../../recipe.service';
+import { Recipe } from '../../recipe';
+import { RECIPES } from '../../mock-recipes';
 
 @Component({
   selector: 'app-recipes',
@@ -8,15 +8,14 @@ import { RecipeService } from '../../recipe.service';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipe: Recipe = {
+  selectedRecipe: Recipe = {
     id: 1,
     recipeName: 'hotwings',
-    cuisine: 'american'
+    cuisine: 'american',
   };
 
   recipes: Recipe[];
 
-  selectedRecipe: Recipe;
   onSelect(recipe: Recipe): void {
     this.selectedRecipe = recipe;
   }
