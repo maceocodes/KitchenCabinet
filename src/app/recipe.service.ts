@@ -12,6 +12,6 @@ export class RecipeService {
   constructor() { }
 }
 
-getRecipes(); Recipe[] {
+getRecipes(): Recipe[] {
   return RECIPES;
-};
+}

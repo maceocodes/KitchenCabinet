@@ -16,10 +16,6 @@ export class RecipesComponent implements OnInit {
 
   recipes: Recipe[];
 
-  getRecipes(): void {
-    this.recipes = this.recipeService.getRecipes();
-  }
-
   selectedRecipe: Recipe;
   onSelect(recipe: Recipe): void {
     this.selectedRecipe = recipe;
@@ -28,7 +24,7 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
-    this.getRecipes();
+
   }
 
 }
