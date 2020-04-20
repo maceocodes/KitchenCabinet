@@ -2,7 +2,9 @@
   <h2>My Recipes</h2>
   <ul class="recipes">
     <li *ngFor = "let recipe of recipes" (click)="onSelect(recipe)">
-      <span class="badge">{{recipe.id}}</span> {{recipe.recipeName}} {{recipe.cuisine}}
+      <span class="badge">{{recipe.id}}</span> 
+      {{recipe.recipeName}} 
+      {{recipe.cuisine}}
     </li>
   </ul>
 </div>

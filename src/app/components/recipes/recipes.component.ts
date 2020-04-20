@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../../recipe';
-import { RECIPES } from '../../mock-recipes';
-
+import { RecipeService } from '../../recipe.service';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -14,17 +13,24 @@ export class RecipesComponent implements OnInit {
     cuisine: 'american',
   };
 
-  recipes: Recipe[];
-
   onSelect(recipe: Recipe): void {
     this.selectedRecipe = recipe;
   }
-  
+
+  recipes: Recipe[];
+
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
-
+    this.getRecipes()
   }
+
+  //retrieve recipes from service
+  getRecipes(): void {
+    this.recipes = this.recipeService.getRecipes();
+  }
+
+
 
 }
 
