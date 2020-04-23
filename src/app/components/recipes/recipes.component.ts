@@ -13,22 +13,29 @@ export class RecipesComponent implements OnInit {
     cuisine: 'american',
   };
 
-  onSelect(recipe: Recipe): void {
-    this.selectedRecipe = recipe;
-  }
-
   recipes: Recipe[];
-
-  constructor(private recipeService: RecipeService) { }
-
-  ngOnInit(): void {
-    this.getRecipes()
-  }
 
   //retrieve recipes from service
   getRecipes(): void {
-    this.recipes = this.recipeService.getRecipes();
+    this.recipeService.getRecipes()
+     .subscribe(recipes => this.recipes = recipes);
   }
+
+  constructor(private recipeService: RecipeService) { }
+
+  ngOnInit() {
+    this.getRecipes()
+  }
+
+  //assigns clicked recipe from template to components selectedRecipe
+  onSelect(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
+  }
+  
+  
+
+  
+
 
 
 
