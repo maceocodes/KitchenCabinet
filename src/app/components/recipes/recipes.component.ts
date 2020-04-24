@@ -7,19 +7,11 @@ import { RecipeService } from '../../recipe.service';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  selectedRecipe: Recipe = {
-    id: 1,
-    recipeName: 'hotwings',
-    cuisine: 'american',
-  };
-
+  selectedRecipe: Recipe;
+  
   recipes: Recipe[];
 
-  //retrieve recipes from service
-  getRecipes(): void {
-    this.recipeService.getRecipes()
-     .subscribe(recipes => this.recipes = recipes);
-  }
+
 
   constructor(private recipeService: RecipeService) { }
 
@@ -32,7 +24,11 @@ export class RecipesComponent implements OnInit {
     this.selectedRecipe = recipe;
   }
   
-  
+  //retrieve recipes from service
+  getRecipes(): void {
+    this.recipeService.getRecipes()
+     .subscribe(recipes => this.recipes = recipes);
+  }
 
   
 
