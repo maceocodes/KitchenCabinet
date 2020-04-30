@@ -1,12 +1,12 @@
+<h2>My Recipes</h2>
 <div>
-  <h2>My Recipes</h2>
   <ul class="recipes">
-    <li *ngFor = "let recipe of recipes" (click)="onSelect(recipe)">
-      <span class="badge">{{recipe.id}}</span> 
-      {{recipe.recipeName}} 
-      {{recipe.cuisine}}
+    <li *ngFor = "let recipe of recipes">
+      <a routerLink="/detail/{{recipe.id}}">
+        <span class="badge">{{recipe.id}}</span> {{recipe.recipeName}} {{recipe.cuisine}}
+      </a>
     </li>
   </ul>
 </div>
 
-<app-recipe-detail [recipe]="selectedRecipe"></app-recipe-detail>
+

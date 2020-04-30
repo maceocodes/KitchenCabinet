@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { RecipesComponent } from './components/recipes/recipes.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RouterModule, Routes  } from '@angular/router';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 
 const routes: Routes = [
-  { path: 'recipes', component: RecipesComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },  
   { path: 'dashboard', component: DashboardComponent},
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'detail/:id', component: RecipeDetailComponent },
+  { path: 'recipes', component: RecipesComponent },
 ];
 
 @NgModule({
