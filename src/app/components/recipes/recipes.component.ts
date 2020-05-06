@@ -14,13 +14,23 @@ export class RecipesComponent implements OnInit {
   ngOnInit() {
     this.getRecipes()
   }
-
  
   //retrieve recipes from service
   getRecipes(): void {
     this.recipeService.getRecipes()
      .subscribe(recipes => this.recipes = recipes);
   }
+
+  add(recipeName: string): void {
+    recipeName = recipeName.trim();
+    if (!recipeName) { return; }
+    this.recipeService.addRecipe({ recipeName } as Recipe)
+      .subscribe(recipe => {
+        this.recipes.push(recipe);
+      });
+  }
 }
+
+
 
  

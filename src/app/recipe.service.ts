@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe';
 import { RECIPES } from './mock-recipes';
-import { Observable, of } from 'rxjs'; //HTTPClient methods return RxJS Observables
+import { Observable, of, ObservableLike } from 'rxjs'; //HTTPClient methods return RxJS Observables
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from'@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -61,6 +61,12 @@ export class RecipeService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+  addRecipe(recipe: Recipe): Observable<Recipe> {
+    return this.http.post<Recipe>(this.recipesUrl, recipe, this.httpOptions).pipe(
+      tap((newRecipe: Recipe) => this.log(`added recipe w/ id=${newRecipe.id}`)),
+      catchError(this.handleError<Recipe>('addRecipe'))
+    );
+  }
 
 }
 
